@@ -4,64 +4,82 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Formulaire style LinkedIn</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
     body {
-        font-family: Arial, sans-serif;
+        font-family: 'Roboto', sans-serif;
         background-color: #f3f2ef;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
+        margin: 0;
     }
 
     .form-container {
         background-color: #fff;
-        padding: 40px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        width: 350px;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        width: 400px;
+        text-align: center;
     }
 
-    .form-container h2 {
-        text-align: center;
-        color: #0a66c2;
+    .form-container img {
+        width: 80px;
         margin-bottom: 20px;
     }
 
+    .form-container h2 {
+        color: #0a66c2;
+        margin-bottom: 25px;
+        font-weight: 700;
+    }
+
     .form-group {
-        margin-bottom: 15px;
+        margin-bottom: 20px;
+        text-align: left;
     }
 
     .form-group label {
         display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
+        margin-bottom: 6px;
+        font-weight: 500;
         font-size: 14px;
         color: #333;
     }
 
-    .form-group input {
+    .form-group input,
+    .form-group textarea {
         width: 100%;
-        padding: 10px;
+        padding: 12px;
         border: 1px solid #ccc;
-        border-radius: 6px;
+        border-radius: 8px;
         font-size: 14px;
-        transition: border-color 0.3s;
+        transition: border-color 0.3s, box-shadow 0.3s;
     }
 
-    .form-group input:focus {
+    .form-group input:focus,
+    .form-group textarea:focus {
         border-color: #0a66c2;
+        box-shadow: 0 0 5px rgba(10,102,194,0.3);
         outline: none;
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
     }
 
     .submit-btn {
         width: 100%;
-        padding: 12px;
+        padding: 14px;
         background-color: #0a66c2;
         color: #fff;
         font-size: 16px;
+        font-weight: 500;
         border: none;
-        border-radius: 6px;
+        border-radius: 8px;
         cursor: pointer;
         transition: background-color 0.3s;
     }
@@ -69,46 +87,29 @@
     .submit-btn:hover {
         background-color: #004182;
     }
-
-    .form-footer {
-        text-align: center;
-        margin-top: 15px;
-        font-size: 12px;
-        color: #666;
-    }
-
-    .form-footer a {
-        color: #0a66c2;
-        text-decoration: none;
-    }
 </style>
 </head>
 <body>
 
 <div class="form-container">
-    <h2>Inscription</h2>
+    <!-- Logo LinkedIn -->
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo">
+    <h2>Contactez-moi</h2>
     <form>
         <div class="form-group">
             <label for="firstName">Prénom</label>
-            <input type="text" id="firstName" name="firstName" placeholder="Entrez votre prénom" required>
+            <input type="text" id="firstName" name="firstName" placeholder="Votre prénom" required>
         </div>
         <div class="form-group">
             <label for="lastName">Nom</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Entrez votre nom" required>
+            <input type="text" id="lastName" name="lastName" placeholder="Votre nom" required>
         </div>
         <div class="form-group">
-            <label for="email">Adresse email</label>
-            <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Écrivez votre message..." required></textarea>
         </div>
-        <div class="form-group">
-            <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="password" placeholder="Créez un mot de passe" required>
-        </div>
-        <button type="submit" class="submit-btn">S'inscrire</button>
+        <button type="submit" class="submit-btn">Envoyer</button>
     </form>
-    <div class="form-footer">
-        Déjà un compte ? <a href="#">Se connecter</a>
-    </div>
 </div>
 
 </body>
