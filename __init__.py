@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route("/contact/")
 def contact():
-    return render_template("contact.html"
+    return render_template("contact.html")
 
 @app.route("/histogramme/")
 def histo():
